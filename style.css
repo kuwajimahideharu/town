@@ -18,6 +18,10 @@
 /* ==========================================================================
    Base
    ========================================================================== */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: var(--font-base);
     color: var(--color-text);
@@ -27,6 +31,9 @@ body {
     line-height: 2;
     letter-spacing: 0.05em;
     -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+    /* 横スクロール防止 */
+    width: 100%;
 }
 
 a {
@@ -292,6 +299,7 @@ img {
 @media (max-width: 768px) {
     .header-inner {
         padding: 15px 20px;
+        width: 100%;
     }
 
     .nav {
@@ -299,18 +307,31 @@ img {
         /* Mobile menu omitted for MVP */
     }
 
+    .hero-text {
+        width: 90%;
+        padding: 40px 20px;
+    }
+
     .hero-text .catchphrase {
         font-size: 1.8rem;
-        height: 220px;
+        height: auto;
+        /* 高さを自動調整 */
+        min-height: 220px;
     }
 
     .menu-item {
         flex-direction: column;
         gap: 30px;
+        width: 100%;
     }
 
     .section {
         padding: 60px 0;
+    }
+
+    .container {
+        padding: 0 20px;
+        width: 100%;
     }
 }
 
