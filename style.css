@@ -403,22 +403,26 @@ img {
         font-size: 1.8rem;
         height: auto;
         /* 高さを自動調整 */
-        min-height: 350px;
-        /* モバイルでも文字が切れないように確保 */
+        min-height: 250px;
+        /* 350pxから縮小 */
         width: fit-content;
         /* 重要: コンテンツ幅に合わせる */
     }
 
     .steam-status-badge {
-        top: 50%;
-        /* 画面中央へ */
+        top: 70%;
+        /* さらに下へ移動 */
         bottom: auto;
         right: auto;
         left: 50%;
         transform: translate(-50%, -50%);
         /* 完全中央配置 */
-        width: 90%;
+        width: auto;
+        /* 幅制限を解除 */
+        max-width: 90%;
         justify-content: center;
+        white-space: nowrap;
+        /* 改行を防ぐ */
     }
 
     .steam-status-badge:hover {
