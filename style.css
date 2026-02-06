@@ -388,6 +388,10 @@ img {
     .hero-text {
         width: 90%;
         padding: 40px 20px;
+        /* モバイルでは文字を中央揃えにするためにFlexboxを使用 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     .hero-text .catchphrase {
@@ -396,18 +400,21 @@ img {
         /* 高さを自動調整 */
         min-height: 350px;
         /* モバイルでも文字が切れないように確保 */
+        width: fit-content;
+        /* 重要: コンテンツ幅に合わせる */
     }
 
     .steam-status-badge {
         bottom: 20px;
-        right: 50%;
-        transform: translateX(50%);
+        right: auto;
+        left: 50%;
+        transform: translateX(-50%);
         width: 90%;
         justify-content: center;
     }
 
     .steam-status-badge:hover {
-        transform: translateX(50%) translateY(-2px);
+        transform: translateX(-50%) translateY(-2px);
     }
 
     .menu-item {
