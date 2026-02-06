@@ -1,0 +1,309 @@
+@charset "UTF-8";
+
+/* ==========================================================================
+   Variables - Japanese Modern Palette
+   ========================================================================== */
+:root {
+    --color-bg: #fcfaf2;       /* 生成り色 (Kinari) */
+    --color-text: #393f4c;     /* 藍鉄色 (Aitetsu) */
+    --color-accent: #96514d;   /* 小豆色 (Azuki) */
+    --color-gold: #c3a05a;     /* 金色 (Kin) */
+    --font-base: "Noto Serif JP", serif;
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+body {
+    font-family: var(--font-base);
+    color: var(--color-text);
+    background-color: var(--color-bg);
+    margin: 0;
+    padding: 0;
+    line-height: 2;
+    letter-spacing: 0.05em;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+a:hover {
+    opacity: 0.7;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ==========================================================================
+   Utility
+   ========================================================================== */
+.vertical-text {
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section {
+    padding: 100px 0;
+}
+
+/* ==========================================================================
+   Header
+   ========================================================================== */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(252, 250, 242, 0.95);
+    z-index: 100;
+    border-bottom: 1px solid rgba(57, 63, 76, 0.1);
+}
+
+.header-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0;
+    color: var(--color-text);
+}
+
+.nav ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav li {
+    margin-left: 30px;
+}
+
+.nav a {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* ==========================================================================
+   Hero
+   ========================================================================== */
+.hero {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.hero-image {
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0.9;
+}
+
+.hero-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(252, 250, 242, 0.85);
+    padding: 60px 40px;
+    border: 1px solid var(--color-text);
+}
+
+.hero-text .catchphrase {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    height: 300px; /* 縦書きの高さ確保 */
+    line-height: 1.8;
+}
+
+/* ==========================================================================
+   Concept
+   ========================================================================== */
+.concept {
+    text-align: center;
+}
+
+.section-title-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 60px;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin: 0;
+    border-right: 1px solid var(--color-accent);
+    padding-right: 20px;
+    height: 150px;
+}
+
+.concept-content p {
+    margin-bottom: 40px;
+    font-size: 1.1rem;
+}
+
+/* ==========================================================================
+   Menu (Mame Daifuku)
+   ========================================================================== */
+.menu {
+    background-color: #fff;
+}
+
+.section-header {
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.section-subtitle {
+    color: var(--color-gold);
+    font-family: serif;
+    font-style: italic;
+    margin-top: 10px;
+}
+
+.menu-item {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 60px;
+}
+
+.menu-image {
+    flex: 1;
+    min-width: 300px;
+}
+
+.menu-image img {
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 4px;
+}
+
+.menu-text {
+    flex: 1;
+    min-width: 300px;
+}
+
+.menu-name {
+    font-size: 1.8rem;
+    color: var(--color-accent);
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--color-gold);
+    display: inline-block;
+    padding-bottom: 10px;
+}
+
+.menu-desc {
+    margin-bottom: 20px;
+}
+
+.price {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--color-text);
+    margin-top: 30px;
+}
+
+/* ==========================================================================
+   Info / Footer
+   ========================================================================== */
+.info {
+    border-top: 1px solid rgba(57, 63, 76, 0.1);
+}
+
+.info .section-title {
+    margin: 0 auto 60px;
+    text-align: center;
+    border: none;
+    height: auto;
+    writing-mode: horizontal-tb;
+    border-bottom: 1px solid var(--color-accent);
+    display: inline-block;
+    padding: 0 0 10px;
+}
+
+.info-content {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.info-list {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.info-list dt {
+    width: 30%;
+    font-weight: 700;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(57, 63, 76, 0.1);
+}
+
+.info-list dd {
+    width: 70%;
+    margin: 0;
+    padding: 15px 0;
+    border-bottom: 1px solid rgba(57, 63, 76, 0.1);
+}
+
+.footer {
+    background-color: var(--color-text);
+    color: var(--color-bg);
+    text-align: center;
+    padding: 20px;
+    font-size: 0.8rem;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 768px) {
+    .header-inner {
+        padding: 15px 20px;
+    }
+    
+    .nav {
+        display: none; /* Mobile menu omitted for MVP */
+    }
+
+    .hero-text .catchphrase {
+        font-size: 1.8rem;
+        height: 220px;
+    }
+
+    .menu-item {
+        flex-direction: column;
+        gap: 30px;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+}
