@@ -4,10 +4,14 @@
    Variables - Japanese Modern Palette
    ========================================================================== */
 :root {
-    --color-bg: #fcfaf2;       /* 生成り色 (Kinari) */
-    --color-text: #393f4c;     /* 藍鉄色 (Aitetsu) */
-    --color-accent: #96514d;   /* 小豆色 (Azuki) */
-    --color-gold: #c3a05a;     /* 金色 (Kin) */
+    --color-bg: #fff8e7;
+    /* 電球色のような温かいクリーム色 */
+    --color-text: #4a3b32;
+    /* 柔らかいこげ茶色 */
+    --color-accent: #d66a35;
+    /* 夕焼けのようなオレンジ (柿色) */
+    --color-gold: #c3a05a;
+    /* 変わらぬ輝き (金色) */
     --font-base: "Noto Serif JP", serif;
 }
 
@@ -140,7 +144,8 @@ img {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
-    height: 300px; /* 縦書きの高さ確保 */
+    height: 300px;
+    /* 縦書きの高さ確保 */
     line-height: 1.8;
 }
 
@@ -202,7 +207,7 @@ img {
 }
 
 .menu-image img {
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     border-radius: 4px;
 }
 
@@ -288,9 +293,10 @@ img {
     .header-inner {
         padding: 15px 20px;
     }
-    
+
     .nav {
-        display: none; /* Mobile menu omitted for MVP */
+        display: none;
+        /* Mobile menu omitted for MVP */
     }
 
     .hero-text .catchphrase {
@@ -302,7 +308,7 @@ img {
         flex-direction: column;
         gap: 30px;
     }
-    
+
     .section {
         padding: 60px 0;
     }
