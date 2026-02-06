@@ -6,15 +6,61 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>和菓子処 大黒庵 | 街の職人の粋をAIで可視化する</title>
     <meta name="description" content="街の職人の粋をAIで可視化する、和菓子処「大黒庵」。看板メニューの豆大福をはじめ、四季折々の和菓子をお届けします。">
+
+    <!-- OGP / SNS Meta Tags -->
+    <meta property="og:title" content="和菓子処 大黒庵 | 街の職人の粋をAIで可視化する">
+    <meta property="og:description" content="街の職人の粋をAIで可視化する、和菓子処「大黒庵」。看板メニューの豆大福をはじめ、四季折々の和菓子をお届けします。">
+    <meta property="og:image" content="images/hero-bg.png">
+    <meta property="og:url" content="https://daikokuan.example.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="ja_JP">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="和菓子処 大黒庵">
+    <meta name="twitter:description" content="街の職人の粋をAIで可視化する、和菓子処「大黒庵」。">
+    <meta name="twitter:image" content="images/hero-bg.png">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍡</text></svg>">
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <script src="js/main.js" defer></script>
+
+    <!-- Structured Data (JSON-LD) -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "和菓子処 大黒庵",
+        "description": "街の職人の粋をAIで可視化する、和菓子処「大黒庵」。看板メニューの豆大福をはじめ、四季折々の和菓子をお届けします。",
+        "image": "images/hero-bg.png",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "殿町１丁目",
+            "addressLocality": "川崎市川崎区",
+            "addressRegion": "神奈川県",
+            "postalCode": "210-0821",
+            "addressCountry": "JP"
+        },
+        "telephone": "+81-44-XXX-XXXX",
+        "openingHours": "Mo-Sa 10:00-18:00",
+        "priceRange": "¥"
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Loading Screen -->
+    <div id="loader" class="loader">
+        <div class="loader-inner">
+            <span class="loader-icon">🍡</span>
+            <p class="loader-text">大黒庵</p>
+        </div>
+    </div>
+
     <header class="header">
         <div class="header-inner">
             <h1 class="logo"><a href="#top">大黒庵</a></h1>
@@ -22,6 +68,7 @@
                 <ul>
                     <li><a href="#concept">こだわり</a></li>
                     <li><a href="#menu">お品書き</a></li>
+                    <li><a href="#gallery">ギャラリー</a></li>
                     <li><a href="#info">店舗情報</a></li>
                 </ul>
             </nav>
@@ -43,8 +90,29 @@
             </div>
             <!-- Steam Counter Badge -->
             <div class="steam-status-badge fade-in">
-                <span class="badget-icon">♨</span>
+                <span class="badge-icon">♨</span>
                 <span id="steam-status-text">本日のお赤飯、蒸し上がりまであと...</span>
+            </div>
+        </section>
+
+        <!-- News Section -->
+        <section class="news section fade-in" id="news">
+            <div class="container">
+                <h2 class="news-title">お知らせ</h2>
+                <ul class="news-list">
+                    <li class="news-item">
+                        <time class="news-date">2026.02.01</time>
+                        <span class="news-text">節分の和菓子「福豆大福」販売開始いたしました</span>
+                    </li>
+                    <li class="news-item">
+                        <time class="news-date">2026.01.15</time>
+                        <span class="news-text">新年特別メニュー「花びら餅」好評販売中</span>
+                    </li>
+                    <li class="news-item">
+                        <time class="news-date">2026.01.01</time>
+                        <span class="news-text">新年あけましておめでとうございます。本年もよろしくお願いいたします</span>
+                    </li>
+                </ul>
             </div>
         </section>
 
@@ -85,7 +153,7 @@
                 <!-- Item 1: Mitarashi -->
                 <div class="menu-item slide-in-left">
                     <div class="menu-image">
-                        <img src="images/mitarashi.png" alt="黄金色のみたらし団子">
+                        <img src="images/mitarashi.png" alt="黄金色のみたらし団子" loading="lazy">
                     </div>
                     <div class="menu-text">
                         <h3 class="menu-name">黄金色のみたらし団子</h3>
@@ -101,7 +169,7 @@
                 <!-- Item 2: Fubuki -->
                 <div class="menu-item reverse slide-in-right">
                     <div class="menu-image">
-                        <img src="images/fubuki.png" alt="ふぶき（吹雪饅頭）">
+                        <img src="images/fubuki.png" alt="ふぶき（吹雪饅頭）" loading="lazy">
                     </div>
                     <div class="menu-text">
                         <h3 class="menu-name">ふぶき（吹雪饅頭）</h3>
@@ -111,14 +179,14 @@
                             ずっしりとした粒あん。<br>
                             素朴だからこそ、嘘のない味です。
                         </p>
-                        <p class="price">個 220円（税込）</p>
+                        <p class="price">1個 220円（税込）</p>
                     </div>
                 </div>
 
                 <!-- Item 3: Sekihan -->
                 <div class="menu-item slide-in-left">
                     <div class="menu-image">
-                        <img src="images/sekihan.png" alt="お祝いのお赤飯">
+                        <img src="images/sekihan.png" alt="お祝いのお赤飯" loading="lazy">
                     </div>
                     <div class="menu-text">
                         <h3 class="menu-name">お祝いのお赤飯</h3>
@@ -135,6 +203,30 @@
             </div>
         </section>
 
+        <!-- Gallery Section -->
+        <section class="gallery section fade-in" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="vertical-text section-title">ギャラリー</h2>
+                    <p class="section-subtitle">Gallery</p>
+                </div>
+                <div class="gallery-grid">
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/fff8e7/4a3b32?text=店内風景" alt="大黒庵の店内風景" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/fff8e7/4a3b32?text=職人の技" alt="和菓子を作る職人" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/fff8e7/4a3b32?text=季節の和菓子" alt="季節の和菓子" loading="lazy">
+                    </div>
+                    <div class="gallery-item">
+                        <img src="https://placehold.co/400x300/fff8e7/4a3b32?text=包装" alt="大黒庵の包装" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
         <section class="info section fade-in" id="info">
             <div class="container">
                 <h2 class="vertical-text section-title">店舗情報</h2>
@@ -144,18 +236,59 @@
                         <dd>和菓子処 大黒庵（Daikokuan）</dd>
                         <dt>住所</dt>
                         <dd>〒210-0821 神奈川県川崎市川崎区殿町１丁目...</dd>
+                        <dt>電話番号</dt>
+                        <dd><a href="tel:044-XXX-XXXX">044-XXX-XXXX</a></dd>
                         <dt>営業時間</dt>
                         <dd>10:00 - 18:00（売り切れ次第終了）</dd>
                         <dt>定休日</dt>
                         <dd>日曜日</dd>
                     </dl>
+                    <div class="info-map">
+                        <iframe
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3247.1234567890123!2d139.7500000!3d35.5500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zMzXCsDMzJzAwLjAiTiAxMznCsDQ1JzAwLjAiRQ!5e0!3m2!1sja!2sjp!4v1234567890123"
+                            width="100%"
+                            height="300"
+                            style="border:0;"
+                            allowfullscreen=""
+                            loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"
+                            title="大黒庵の地図">
+                        </iframe>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Page Top Button -->
+    <button id="page-top" class="page-top" aria-label="ページトップへ戻る">
+        <span>▲</span>
+    </button>
+
     <footer class="footer">
-        <p class="copyright">&copy; 2026 Daikokuan. All Rights Reserved.</p>
+        <div class="footer-inner">
+            <div class="footer-brand">
+                <p class="footer-logo">大黒庵</p>
+                <p class="footer-tagline">街の職人の粋を、AIで可視化する。</p>
+            </div>
+            <nav class="footer-nav">
+                <ul>
+                    <li><a href="#top">トップ</a></li>
+                    <li><a href="#concept">こだわり</a></li>
+                    <li><a href="#menu">お品書き</a></li>
+                    <li><a href="#gallery">ギャラリー</a></li>
+                    <li><a href="#info">店舗情報</a></li>
+                </ul>
+            </nav>
+            <div class="footer-social">
+                <a href="#" aria-label="Instagram">📷</a>
+                <a href="#" aria-label="Twitter">🐦</a>
+                <a href="#" aria-label="Facebook">📘</a>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p class="copyright">&copy; 2026 Daikokuan. All Rights Reserved.</p>
+        </div>
     </footer>
 </body>
 

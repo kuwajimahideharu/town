@@ -1,3 +1,15 @@
+// ==========================================
+// Loading Screen
+// ==========================================
+window.addEventListener('load', () => {
+    const loader = document.getElementById('loader');
+    if (loader) {
+        setTimeout(() => {
+            loader.classList.add('hidden');
+        }, 500);
+    }
+});
+
 document.addEventListener('DOMContentLoaded', () => {
     // ==========================================
     // 1. 本日の蒸したてカウンター (Today's Steamed Counter)
@@ -88,4 +100,59 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         });
     }
+
+    // ==========================================
+    // 4. ヘッダー縮小 (Header Shrink on Scroll)
+    // ==========================================
+    const header = document.querySelector('.header');
+    const scrollThreshold = 100;
+
+    const handleHeaderScroll = () => {
+        if (window.scrollY > scrollThreshold) {
+            header.classList.add('scrolled');
+        } else {
+            header.classList.remove('scrolled');
+        }
+    };
+
+    window.addEventListener('scroll', handleHeaderScroll);
+
+    // ==========================================
+    // 5. ページトップボタン (Page Top Button)
+    // ==========================================
+    const pageTopBtn = document.getElementById('page-top');
+    const pageTopThreshold = 300;
+
+    const handlePageTopScroll = () => {
+        if (window.scrollY > pageTopThreshold) {
+            pageTopBtn.classList.add('visible');
+        } else {
+            pageTopBtn.classList.remove('visible');
+        }
+    };
+
+    window.addEventListener('scroll', handlePageTopScroll);
+
+    if (pageTopBtn) {
+        pageTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    }
+
+    // ==========================================
+    // 6. ヒーローパララックス (Hero Parallax Effect)
+    // ==========================================
+    const heroImage = document.querySelector('.hero-image img');
+
+    const handleParallax = () => {
+        if (heroImage && window.scrollY < window.innerHeight) {
+            const scrolled = window.scrollY;
+            heroImage.style.transform = `translateY(${scrolled * 0.3}px)`;
+        }
+    };
+
+    window.addEventListener('scroll', handleParallax);
 });
