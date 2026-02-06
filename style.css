@@ -313,3 +313,16 @@ img {
         padding: 60px 0;
     }
 }
+
+/* ==========================================================================
+   Utility - Reverse Layout
+   ========================================================================== */
+.menu-item.reverse {
+    flex-direction: row-reverse;
+}
+
+@media (max-width: 768px) {
+    .menu-item.reverse {
+        flex-direction: column;
+    }
+}
