@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@300;400;500;700&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <script src="js/main.js" defer></script>
 </head>
 
 <body>
@@ -32,16 +33,22 @@
             <div class="hero-image">
                 <img src="images/hero-bg.png" alt="大黒庵 店頭・職人（夕暮れ）">
             </div>
-            <div class="hero-text">
+            <div class="hero-text fade-in">
                 <p class="vertical-text catchphrase">街の職人の粋を、<br>AIで可視化する。</p>
+            </div>
+            <!-- Steam Counter Badge -->
+            <div class="steam-status-badge fade-in">
+                <span class="badget-icon">♨</span>
+                <span id="steam-status-text">本日のお赤飯、蒸し上がりまであと...</span>
             </div>
         </section>
 
-        <section class="concept section" id="concept">
+        <section class="concept section fade-in" id="concept">
             <div class="container">
                 <div class="section-title-wrapper">
                     <h2 class="vertical-text section-title">大黒庵の想い</h2>
                 </div>
+                <!-- ... content ... -->
                 <div class="concept-content">
                     <p>
                         かつて、この街の商店街に灯っていた<br>
@@ -65,13 +72,13 @@
 
         <section class="menu section" id="menu">
             <div class="container">
-                <div class="section-header">
+                <div class="section-header fade-in">
                     <h2 class="vertical-text section-title">お品書き</h2>
                     <p class="section-subtitle">Menu</p>
                 </div>
 
                 <!-- Item 1: Mitarashi -->
-                <div class="menu-item">
+                <div class="menu-item slide-in-left">
                     <div class="menu-image">
                         <img src="images/mitarashi.png" alt="黄金色のみたらし団子">
                     </div>
@@ -87,7 +94,7 @@
                 </div>
 
                 <!-- Item 2: Fubuki -->
-                <div class="menu-item reverse">
+                <div class="menu-item reverse slide-in-right">
                     <div class="menu-image">
                         <img src="images/fubuki.png" alt="ふぶき（吹雪饅頭）">
                     </div>
@@ -104,7 +111,7 @@
                 </div>
 
                 <!-- Item 3: Sekihan -->
-                <div class="menu-item">
+                <div class="menu-item slide-in-left">
                     <div class="menu-image">
                         <img src="images/sekihan.png" alt="お祝いのお赤飯">
                     </div>
@@ -123,7 +130,7 @@
             </div>
         </section>
 
-        <section class="info section" id="info">
+        <section class="info section fade-in" id="info">
             <div class="container">
                 <h2 class="vertical-text section-title">店舗情報</h2>
                 <div class="info-content">

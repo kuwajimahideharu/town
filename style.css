@@ -29,7 +29,8 @@ body {
     margin: 0;
     padding: 0;
     line-height: 2;
-    letter-spacing: 0.05em;
+    letter-spacing: 0.1em;
+    /* 高級感を出すために少し広げる */
     -webkit-font-smoothing: antialiased;
     overflow-x: hidden;
     /* 横スクロール防止 */
@@ -151,10 +152,50 @@ img {
     font-size: 2.5rem;
     font-weight: 700;
     margin: 0;
-    height: 300px;
-    /* 縦書きの高さ確保 */
+    height: 500px;
+    /* 縦書きの高さ確保：文字数に合わせて調整 */
     line-height: 1.8;
 }
+
+/* Steam Status Badge */
+.steam-status-badge {
+    position: absolute;
+    bottom: 40px;
+    right: 40px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 15px 25px;
+    border-radius: 50px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--color-text);
+    border: 1px solid var(--color-gold);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.steam-status-badge:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.steam-status-badge .badget-icon {
+    font-size: 1.2rem;
+    color: var(--color-accent);
+}
+
+.steam-status-badge.is-ready {
+    background-color: var(--color-text);
+    color: #fff;
+    border-color: var(--color-text);
+}
+
+.steam-status-badge.is-ready .badget-icon {
+    color: var(--color-gold);
+}
+
 
 /* ==========================================================================
    Concept
@@ -294,6 +335,43 @@ img {
 }
 
 /* ==========================================================================
+   Animations
+   ========================================================================== */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.slide-in-left {
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slide-in-left.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.slide-in-right {
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.slide-in-right.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+
+/* ==========================================================================
    Responsive
    ========================================================================== */
 @media (max-width: 768px) {
@@ -316,7 +394,20 @@ img {
         font-size: 1.8rem;
         height: auto;
         /* 高さを自動調整 */
-        min-height: 220px;
+        min-height: 350px;
+        /* モバイルでも文字が切れないように確保 */
+    }
+
+    .steam-status-badge {
+        bottom: 20px;
+        right: 50%;
+        transform: translateX(50%);
+        width: 90%;
+        justify-content: center;
+    }
+
+    .steam-status-badge:hover {
+        transform: translateX(50%) translateY(-2px);
     }
 
     .menu-item {
