@@ -394,8 +394,8 @@ img {
         display: flex;
         justify-content: center;
         align-items: center;
-        top: 15%;
-        /* さらに上へ移動 */
+        top: 40%;
+        /* 下へ移動 (15% -> 40%) */
         bottom: auto;
     }
 
@@ -410,11 +410,12 @@ img {
     }
 
     .steam-status-badge {
-        top: 70%;
+        top: 78%;
         /* さらに下へ移動 */
         bottom: auto;
         right: auto;
-        left: 50%;
+        left: 35%;
+        /* 見切れ防止のため左へ寄せる */
         transform: translate(-50%, -50%);
         /* 完全中央配置 */
         width: auto;
