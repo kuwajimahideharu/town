@@ -3,31 +3,31 @@ document.addEventListener('DOMContentLoaded', () => {
     // 1. 本日の蒸したてカウンター (Today's Steamed Counter)
     // ==========================================
     const steamStatusElement = document.getElementById('steam-status-text');
-    
+
     if (steamStatusElement) {
         const updateSteamStatus = () => {
             const now = new Date();
             const currentHour = now.getHours();
             const currentMin = now.getMinutes();
-            
+
             // 開店時間（10:00）
             const openHour = 10;
             const openMin = 0;
-            
+
             // 現在時刻（分換算）
             const currentTotalMin = currentHour * 60 + currentMin;
             // 開店時刻（分換算）
             const openTotalMin = openHour * 60 + openMin;
-            
+
             const diffMin = openTotalMin - currentTotalMin;
-            
+
             if (diffMin > 0) {
                 // 開店前 (Before opening)
                 // 60分以内なら分表示、それ以上なら「準備中」など柔軟に
                 if (diffMin <= 60) {
-                     steamStatusElement.textContent = `本日のお赤飯、蒸し上がりまであとxc2xa0${diffMin}分`;
+                    steamStatusElement.textContent = `本日のお赤飯、蒸し上がりまであとxc2xa0${diffMin}分`;
                 } else {
-                     steamStatusElement.textContent = `本日のお赤飯、10時に蒸し上がります`;
+                    steamStatusElement.textContent = `本日のお赤飯、10時に蒸し上がります`;
                 }
                 steamStatusElement.parentElement.classList.remove('is-ready');
             } else {
@@ -36,7 +36,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 steamStatusElement.parentElement.classList.add('is-ready');
             }
         };
-        
+
         // 初回実行
         updateSteamStatus();
         // 1分ごとに更新
@@ -47,13 +47,13 @@ document.addEventListener('DOMContentLoaded', () => {
     // 2. スクロールアニメーション (Scroll Animations)
     // ==========================================
     const fadeElements = document.querySelectorAll('.fade-in, .slide-in-left, .slide-in-right');
-    
+
     const observerOptions = {
         root: null,
         rootMargin: '0px',
         threshold: 0.2 // 要素が20%見えたら発火
     };
-    
+
     const observer = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
@@ -63,6 +63,29 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, observerOptions);
-    
+
     fadeElements.forEach(el => observer.observe(el));
+
+    // ==========================================
+    // 3. ハンバーガーメニュー (Hamburger Menu)
+    // ==========================================
+    const hamburgerBtn = document.getElementById('hamburger-menu');
+    const nav = document.getElementById('nav');
+    const navLinks = nav.querySelectorAll('a');
+
+    if (hamburgerBtn && nav) {
+        // Toggle Menu
+        hamburgerBtn.addEventListener('click', () => {
+            hamburgerBtn.classList.toggle('active');
+            nav.classList.toggle('active');
+        });
+
+        // Close menu when a link is clicked
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                hamburgerBtn.classList.remove('active');
+                nav.classList.remove('active');
+            });
+        });
+    }
 });
