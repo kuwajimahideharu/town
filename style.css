@@ -251,18 +251,11 @@ img {
     text-align: center;
 }
 
-.section-title-wrapper {
-    display: flex;
-    justify-content: center;
-    margin-bottom: 60px;
-}
-
 .section-title {
     font-size: 2rem;
     margin: 0;
     border-right: 1px solid var(--color-accent);
     padding-right: 20px;
-    height: 150px;
     white-space: nowrap;
 }
 
@@ -279,7 +272,7 @@ img {
 }
 
 .section-header {
-    text-align: center;
+    text-align: left;
     margin-bottom: 60px;
 }
 
@@ -362,17 +355,6 @@ img {
    ========================================================================== */
 .info {
     border-top: 1px solid rgba(57, 63, 76, 0.1);
-}
-
-.info .section-title {
-    margin: 0 auto 60px;
-    text-align: center;
-    border: none;
-    height: auto;
-    writing-mode: horizontal-tb;
-    border-bottom: 1px solid var(--color-accent);
-    display: inline-block;
-    padding: 0 0 10px;
 }
 
 .info-content {
