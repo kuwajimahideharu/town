@@ -880,6 +880,13 @@ img {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
+.form-note {
+    font-size: 0.8rem;
+    color: rgba(74, 59, 50, 0.7);
+    margin-top: 15px;
+    line-height: 1.6;
+}
+
 .news .container {
     text-align: center;
 }
