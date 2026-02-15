@@ -880,11 +880,27 @@ img {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
-.form-note {
-    font-size: 0.8rem;
-    color: rgba(74, 59, 50, 0.7);
+.form-status {
     margin-top: 15px;
-    line-height: 1.6;
+    padding: 15px;
+    border-radius: 4px;
+    text-align: center;
+    font-weight: bold;
+    display: none;
+}
+
+.form-status.success {
+    display: block;
+    color: #155724;
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+}
+
+.form-status.error {
+    display: block;
+    color: #721c24;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
 }
 
 .news .container {

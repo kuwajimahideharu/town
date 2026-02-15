@@ -155,4 +155,46 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     window.addEventListener('scroll', handleParallax);
+
+    // ==========================================
+    // 7. お問い合わせフォーム (Contact Form AJAX)
+    // ==========================================
+    const contactForm = document.getElementById('contact-form');
+    const formStatus = document.getElementById('form-status');
+
+    if (contactForm) {
+        contactForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const form = e.target;
+            const data = new FormData(form);
+
+            try {
+                const response = await fetch(form.action, {
+                    method: form.method,
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+
+                if (response.ok) {
+                    formStatus.innerHTML = 'お問い合わせありがとうございます。<br>メッセージを送信しました。';
+                    formStatus.className = 'form-status success';
+                    form.reset();
+                } else {
+                    const jsonData = await response.json();
+                    if (Object.hasOwn(jsonData, 'errors')) {
+                        const errorMessages = jsonData.errors.map(error => error.message).join('<br>');
+                        formStatus.innerHTML = `送信に失敗しました:<br>${errorMessages}`;
+                    } else {
+                        formStatus.innerHTML = '送信に失敗しました。もう一度お試しください。';
+                    }
+                    formStatus.className = 'form-status error';
+                }
+            } catch (error) {
+                formStatus.innerHTML = 'エラーが発生しました。もう一度お試しください。';
+                formStatus.className = 'form-status error';
+            }
+        });
+    }
 });

@@ -275,7 +275,7 @@
                 </div>
                 <div class="contact-content">
                     <p class="contact-message">取材、大口注文、その他のお問い合わせは<br>下記フォームよりご連絡ください。</p>
-                    <form action="https://formspree.io/f/xbddjzvr" method="POST" class="contact-form">
+                    <form action="https://formspree.io/f/xbddjzvr" method="POST" class="contact-form" id="contact-form">
                         <div class="form-group">
                             <label for="name" class="form-label">お名前</label>
                             <input type="text" id="name" name="name" class="form-input" required placeholder="例：大黒 太郎">
@@ -292,8 +292,8 @@
                         </div>
                         <div class="form-submit">
                             <button type="submit" class="form-button">送信する</button>
-                            <p class="form-note">※送信後は完了ページへ移動します。<br>「元のサイトに戻る」ボタンで戻ってください。</p>
                         </div>
+                        <div id="form-status" class="form-status"></div>
                     </form>
                 </div>
             </div>
